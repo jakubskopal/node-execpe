@@ -1,11 +1,11 @@
 {
-  "name": "kexec",
+  "name": "execpe",
   "version": "3.0.0",
   "description": "Replace your Node.js process with another process. Like Ruby exec.",
-  "homepage": "https://github.com/jprichardson/node-kexec",
+  "homepage": "https://github.com/jakubskopal/node-execpe",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jprichardson/node-kexec"
+    "url": "https://github.com/jakubskopal/node-execpe"
   },
   "scripts": {
     "lint": "standard",
@@ -16,9 +16,10 @@
     "exec",
     "spawn",
     "process",
+    "execpe",
     "kexec"
   ],
-  "author": "JP Richardson <jprichardson@gmail.com>",
+  "author": "Jakub Skopal <j@kubs.cz>",
   "license": "MIT",
   "main": "./index",
   "engines": {

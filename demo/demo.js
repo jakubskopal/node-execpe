@@ -1,2 +1,2 @@
-var kexec = require('../')
-kexec('top')
+var execpe = require('../')
+execpe('top')

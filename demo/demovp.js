@@ -1,2 +1,2 @@
-var kexec = require('../')
-kexec('less', [ '/etc/fstab' ])
+var execpe = require('../')
+execpe('less', [ '/etc/fstab' ])

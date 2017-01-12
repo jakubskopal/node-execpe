@@ -1,8 +1,8 @@
 {
   'targets': [
     {
-      'target_name': 'kexec',
-      'sources': [ 'src/kexec.cc' ],
+      'target_name': 'execpe',
+      'sources': [ 'src/execpe.cc' ],
       'defines': [
         '<!@(node -v |grep "v[^0]" > /dev/null && echo "__NODE_GE_V4__" || true)',
         '<!@(node -v |grep "v0\.1[12]" > /dev/null && echo "__NODE_V0_11_OR_12__" || true)',
