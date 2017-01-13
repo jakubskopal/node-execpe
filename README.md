@@ -1,54 +1,46 @@
-Node.js - kexec
-===============
+Node.js - execpe
+================
 
-[![npm Package](https://img.shields.io/npm/v/kexec.svg?style=flat-square)](https://www.npmjs.org/package/kexec)
-[![build status](https://api.travis-ci.org/jprichardson/node-kexec.svg)](http://travis-ci.org/jprichardson/node-kexec)
+[![build status](https://api.travis-ci.org/jakubskopal/node-execpe.svg)](http://travis-ci.org/jakubskopal/node-execpe)
 [![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 This module causes your current Node.js process to be replaced by the process invoked by the parameter of this function. It's like the Ruby exec function. It currently does not work on Windows.
-
-Fully compatible with Node.js version v0.10 and v0.11.
+It is a fork of [JP Richardson's execpe](https://github.com/jprichardson/node-execpe) with ability to override environment.
 
 
 Usage
 -----
 
 ```js
-var kexec = require('kexec')
+var execpe = require('execpe')
 
-kexec('top') //your process now becomes top, can also accept parameters in one string
+execpe('top') // your process now becomes top. equivalent of execpe('top', [], process.env);
 ```
 
 ```javascript
-var kexec = require('kexec')
+var execpe = require('execpe')
 
-kexec('du', [ '-sh', '/etc/fstab' ]) //your process now becomes du, with the arguments indicated
+execpe('du', [ '-sh', '/etc/fstab' ]) // your process now becomes du, with the arguments indicated
+```
+
+```javascript
+var execpe = require('execpe')
+
+// your process now becomes du, with the arguments and environment as indicated
+execpe('du', [ '-sh', '/etc/fstab' ], Object.assign({}, process.env, { TERM: 'bare' }))
 ```
 
 
 Details
 -------
 
-`kexec` can be called in either of two ways, as indicated by the examples, above.
-
-With one argument `arg`, that argument must be a string.  The resulting system
-call is:
-
-    execvp("/bin/sh", [ "/bin/sh", "-c", arg, 0 ]);
-
-With two arguments, the first (`cmd`) must be a string, and the second (`args`) an array of strings.  The resulting
-system call is:
-
-    execvp(cmd, [ cmd, args[0], args[1], ..., 0 ]);
-
-In the first case, the command is subject to shell parsing, and shell meta
-characters retain their special meanings.  In the second case, the arguments
-are passed directly to `execvp`, without an intervening shell.
-
+`execpe` can be called with one argument, where the first is the name of the executable,
+second is a list of params and third is a map of environment variables. Map of variables
+defaults to process.env.
 
 License
 -------
 
 (The MIT License)
 
-Copyright (c) 2011-2015 JP Richardson
+Copyright (c) 2011-2017 JP Richardson & Jakub Skopal
