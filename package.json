@@ -1,6 +1,6 @@
 {
   "name": "execpe",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Replace your Node.js process with another process. Like Ruby exec.",
   "homepage": "https://github.com/jakubskopal/node-execpe",
   "repository": {
