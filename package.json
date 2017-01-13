@@ -21,7 +21,8 @@
   ],
   "author": "Jakub Skopal <j@kubs.cz>",
   "license": "MIT",
-  "main": "./index",
+  "main": "index.js",
+  "typings": "execpe.d.ts",
   "engines": {
     "node": ">=0.10"
   },
