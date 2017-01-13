@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 
-var kexec = require('../../');
+var execpe = require('../../');
 
-kexec('echo "hello world"');
+execpe('echo', ['hello world']);
